@@ -16,16 +16,24 @@ class ThbTextComponent extends PolymerElement {
           display: block;
         }
       </style>
-      <h2>Hello [[prop1]]!</h2>
+      <span>Hello [[convertToText()]]!</span>
     `;
   }
   static get properties() {
     return {
-      prop1: {
+      value: {
         type: String,
-        value: 'thb-text-component',
       },
     };
+  }
+
+  constructor() {
+    super();
+  }
+
+  convertToText() {
+    // TODO: Add code to convert value to text here
+    return this.value;
   }
 }
 

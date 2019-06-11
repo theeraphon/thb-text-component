@@ -16,7 +16,7 @@ class ThbTextComponent extends PolymerElement {
           display: block;
         }
       </style>
-      <span>Hello [[convertToText()]]!</span>
+      <span>[[convertToText()]]</span>
     `;
   }
   static get properties() {
@@ -33,7 +33,19 @@ class ThbTextComponent extends PolymerElement {
 
   convertToText() {
     // TODO: Add code to convert value to text here
-    return this.value;
+    const value = this.parseNumber(this.value);
+    if (value) {
+
+    }
+    return value ? this.value : 'Error';
+  }
+
+  parseNumber(val) {
+    return this.isNumber(val) ? Number.parseFloat(Number.parseFloat(val).toFixed(2)) : undefined;
+  }
+
+  isNumber(str) {
+    return !isNaN(parseFloat(str)) && isFinite(str);
   }
 }
 

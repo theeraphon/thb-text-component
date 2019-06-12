@@ -1,6 +1,14 @@
 {
   "name": "thb-text-component",
   "main": "thb-text-component.js",
+  "license": "MIT",
+  "version": "0.1.0",
+  "contributors": [{
+      "name" : "Theeraphon Samathi",
+      "email" : "iam@theeraphon.me",
+      "url" : "https://github.com/theeraphon"
+    }
+  ],
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
   },

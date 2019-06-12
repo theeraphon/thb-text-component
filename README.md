@@ -1,5 +1,7 @@
 # \<thb-text-component\>
 
+[![Published on NPM](https://img.shields.io/npm/v/@progressivewebcomponents/pwa-install.svg)](https://www.npmjs.com/package/thb-text-component)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/thb-text-component)
 
 
 ## Install the Polymer-CLI

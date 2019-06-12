@@ -16,7 +16,7 @@ class ThbTextComponent extends PolymerElement {
           display: block;
         }
       </style>
-      <span>[[convertToText()]]</span>
+      <span>[[_convertToText()]]</span>
     `;
   }
   static get properties() {
@@ -35,7 +35,7 @@ class ThbTextComponent extends PolymerElement {
     this.digitText = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน'];
   }
 
-  convertToText() {
+  _convertToText() {
 
     let value = this.parseNumber(this.value);
     let text = '';
@@ -58,7 +58,7 @@ class ThbTextComponent extends PolymerElement {
     return value ? text : 'Error';
   }
 
-  getText(value) {
+  _getText(value) {
     let digit = 0;
     let text = '';
     for (let i = value.length - 1; i >= 0; i--) {
@@ -89,11 +89,11 @@ class ThbTextComponent extends PolymerElement {
     return text;
   }
 
-  parseNumber(val) {
+  _parseNumber(val) {
     return this.isNumber(val) ? Number.parseFloat(Number.parseFloat(val).toFixed(2)) : undefined;
   }
 
-  isNumber(str) {
+  _isNumber(str) {
     return !isNaN(parseFloat(str)) && isFinite(str);
   }
 }

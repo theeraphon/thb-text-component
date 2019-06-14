@@ -7,6 +7,18 @@
     "lint": "polymer lint",
     "test": "polymer test"
   },
+  "license": "MIT",
+  "version": "0.1.5",
+  "contributors": [{
+      "name" : "Theeraphon Samathi",
+      "email" : "iam@theeraphon.me",
+      "url" : "https://github.com/theeraphon"
+    }
+  ],
+  "repository": {
+      "type" : "git",
+      "url" : "https://github.com/theeraphon/thb-text-component"
+  },
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
   },

@@ -16,37 +16,123 @@
   </head>
   <body>
 
-    <test-fixture id="BasicTestFixture">
+    <test-fixture id="BasicFixture_1">
       <template>
         <thb-text-component></thb-text-component>
       </template>
     </test-fixture>
 
-    <test-fixture id="ChangedPropertyTestFixture">
+    <test-fixture id="BasicFixture_2">
       <template>
-        <thb-text-component prop1="new-prop1"></thb-text-component>
+        <thb-text-component value=''></thb-text-component>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="BasicFixture_3">
+      <template>
+        <thb-text-component value='0'></thb-text-component>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="BasicFixture_4">
+      <template>
+        <thb-text-component value='0.25'></thb-text-component>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="BasicFixture_5">
+      <template>
+        <thb-text-component value='1'></thb-text-component>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="BasicFixture_6">
+      <template>
+        <thb-text-component value='11'></thb-text-component>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="BasicFixture_8">
+      <template>
+        <thb-text-component value='11.25'></thb-text-component>
       </template>
     </test-fixture>
 
     <script type="module">
       suite('thb-text-component', () => {
 
+        test('instantiating with no value', () => {
+          const element = fixture('BasicFixture_1');
+          assert.equal(element.value, undefined);
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('span');
+          assert.equal(element.innerHTML, '');         
+        });
+
+        test('instantiating with empty string', () => {
+          const element = fixture('BasicFixture_2');
+          assert.equal(element.value, '');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('span');
+          assert.equal(element.innerHTML, '');         
+        });
+
+        test('instantiating with zero', () => {
+          const element = fixture('BasicFixture_3');
+          assert.equal(element.value, '0');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('span');
+          assert.equal(element.innerHTML, 'ศูนย์บาทถ้วน');         
+        });
+
+        test('0.25', () => {
+          const element = fixture('BasicFixture_4');
+          assert.equal(element.value, '0.25');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('span');
+          assert.equal(element.innerHTML, 'ยี่สิบห้าสตางค์');         
+        });
+
+        test('1', () => {
+          const element = fixture('BasicFixture_5');
+          assert.equal(element.value, '1');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('span');
+          assert.equal(element.innerHTML, 'หนึ่งบาทถ้วน');         
+        });
+
+        test('11', () => {
+          const element = fixture('BasicFixture_6');
+          assert.equal(element.value, '11');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('span');
+          assert.equal(element.innerHTML, 'สิบเอ็ดบาทถ้วน');         
+        });
+
+        test('11.25', () => {
+          const element = fixture('BasicFixture_6');
+          assert.equal(element.value, '11.25');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('span');
+          assert.equal(element.innerHTML, 'สิบเอ็ดบาทยี่สิบห้าสตางค์');         
+        });
+/*
         test('instantiating the element with default properties works', () => {
           const element = fixture('BasicTestFixture');
-          assert.equal(element.prop1, 'thb-text-component');
+          assert.equal(element.value, undefined);
           const elementShadowRoot = element.shadowRoot;
           const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello thb-text-component!');
+          assert.equal(elementHeader.innerHTML, '');
         });
 
         test('setting a property on the element works', () => {
           // Create a test fixture
           const element = fixture('ChangedPropertyTestFixture');
-          assert.equal(element.prop1, 'new-prop1');
+          assert.equal(element.value, '');
           const elementShadowRoot = element.shadowRoot;
           const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
-        });
+          assert.equal(elementHeader.innerHTML, '');
+        });*/
 
       });
     </script>

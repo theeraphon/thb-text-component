@@ -39,23 +39,24 @@ class ThbTextComponent extends PolymerElement {
 
     let value = this._parseNumber(this.value);
     let text = '';
-    if (value) {
+    if (value !== undefined) {
       const valueStr = value.toString();
       const arrStr = valueStr.split('.', 2);
       const decicaml = arrStr[0];
-
-      if (decicaml != '0') {
-        text = this._getText(decicaml);
-      }
-      text = `${text}บาท`;
       const point = arrStr[1] ? Number.parseInt(arrStr[1]).toString() : undefined;
+
+      if ((decicaml !== '0') || (decicaml === '0' && point === undefined)) {
+        text = this._getText(decicaml);
+        text = `${text}บาท`;
+      }
+      
       if(point) {
         text = `${text}${this._getText(point)}สตางค์`;
       } else {
         text = `${text}ถ้วน`;
       }
     }
-    return value ? text : 'Error';
+    return value !== undefined ? text : 'Error';
   }
 
   _getText(value) {

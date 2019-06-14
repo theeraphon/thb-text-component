@@ -2,6 +2,7 @@
 
 [![Published on NPM](https://img.shields.io/npm/v/thb-text-component.svg)](https://www.npmjs.com/package/thb-text-component)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/thb-text-component)
+[![Build Status](https://travis-ci.org/theeraphon/thb-text-component.svg?branch=master)](https://travis-ci.org/theeraphon/thb-text-component)
 
 
 ## Install the Polymer-CLI

@@ -37,7 +37,7 @@ class ThbTextComponent extends PolymerElement {
 
   _convertToText() {
 
-    let value = this.parseNumber(this.value);
+    let value = this._parseNumber(this.value);
     let text = '';
     if (value) {
       const valueStr = value.toString();
@@ -45,12 +45,12 @@ class ThbTextComponent extends PolymerElement {
       const decicaml = arrStr[0];
 
       if (decicaml != '0') {
-        text = this.getText(decicaml);
+        text = this._getText(decicaml);
       }
       text = `${text}บาท`;
       const point = arrStr[1] ? Number.parseInt(arrStr[1]).toString() : undefined;
       if(point) {
-        text = `${text}${this.getText(point)}สตางค์`;
+        text = `${text}${this._getText(point)}สตางค์`;
       } else {
         text = `${text}ถ้วน`;
       }
@@ -90,7 +90,7 @@ class ThbTextComponent extends PolymerElement {
   }
 
   _parseNumber(val) {
-    return this.isNumber(val) ? Number.parseFloat(Number.parseFloat(val).toFixed(2)) : undefined;
+    return this._isNumber(val) ? Number.parseFloat(Number.parseFloat(val).toFixed(2)) : undefined;
   }
 
   _isNumber(str) {

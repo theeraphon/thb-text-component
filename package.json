@@ -1,6 +1,12 @@
 {
   "name": "thb-text-component",
   "main": "thb-text-component.js",
+  "scripts": {
+    "start": "polymer serve",
+    "build": "polymer build",
+    "lint": "polymer lint",
+    "test": "polymer test"
+  },
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
   },

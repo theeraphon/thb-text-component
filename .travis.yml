@@ -9,9 +9,8 @@ addons:
 cache:
   directories:
     - node_modules
-install:
-  - npm install
 before_script:
+  - npm install
   - npm run lint
 script:
   - xvfb-run npm run test

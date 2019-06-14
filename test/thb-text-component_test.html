@@ -52,7 +52,7 @@
       </template>
     </test-fixture>
 
-    <test-fixture id="BasicFixture_8">
+    <test-fixture id="BasicFixture_7">
       <template>
         <thb-text-component value='11.25'></thb-text-component>
       </template>
@@ -65,56 +65,56 @@
           const element = fixture('BasicFixture_1');
           assert.equal(element.value, undefined);
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('span');
-          assert.equal(element.innerHTML, '');         
+          const elementSpan = elementShadowRoot.querySelector('span');
+          assert.equal(elementSpan.innerHTML, 'Error');         
         });
 
         test('instantiating with empty string', () => {
           const element = fixture('BasicFixture_2');
           assert.equal(element.value, '');
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('span');
-          assert.equal(element.innerHTML, '');         
+          const elementSpan = elementShadowRoot.querySelector('span');
+          assert.equal(elementSpan.innerHTML, 'Error');         
         });
 
         test('instantiating with zero', () => {
           const element = fixture('BasicFixture_3');
           assert.equal(element.value, '0');
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('span');
-          assert.equal(element.innerHTML, 'ศูนย์บาทถ้วน');         
+          const elementSpan = elementShadowRoot.querySelector('span');
+          assert.equal(elementSpan.innerHTML, 'ศูนย์บาทถ้วน');         
         });
 
         test('0.25', () => {
           const element = fixture('BasicFixture_4');
           assert.equal(element.value, '0.25');
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('span');
-          assert.equal(element.innerHTML, 'ยี่สิบห้าสตางค์');         
+          const elementSpan = elementShadowRoot.querySelector('span');
+          assert.equal(elementSpan.innerHTML, 'ยี่สิบห้าสตางค์');         
         });
 
         test('1', () => {
           const element = fixture('BasicFixture_5');
           assert.equal(element.value, '1');
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('span');
-          assert.equal(element.innerHTML, 'หนึ่งบาทถ้วน');         
+          const elementSpan = elementShadowRoot.querySelector('span');
+          assert.equal(elementSpan.innerHTML, 'หนึ่งบาทถ้วน');         
         });
 
         test('11', () => {
           const element = fixture('BasicFixture_6');
           assert.equal(element.value, '11');
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('span');
-          assert.equal(element.innerHTML, 'สิบเอ็ดบาทถ้วน');         
+          const elementSpan = elementShadowRoot.querySelector('span');
+          assert.equal(elementSpan.innerHTML, 'สิบเอ็ดบาทถ้วน');         
         });
 
         test('11.25', () => {
-          const element = fixture('BasicFixture_6');
+          const element = fixture('BasicFixture_7');
           assert.equal(element.value, '11.25');
           const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('span');
-          assert.equal(element.innerHTML, 'สิบเอ็ดบาทยี่สิบห้าสตางค์');         
+          const elementSpan = elementShadowRoot.querySelector('span');
+          assert.equal(elementSpan.innerHTML, 'สิบเอ็ดบาทยี่สิบห้าสตางค์');         
         });
 /*
         test('instantiating the element with default properties works', () => {

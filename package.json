@@ -8,7 +8,7 @@
     "test": "polymer test"
   },
   "license": "MIT",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "contributors": [{
       "name" : "Theeraphon Samathi",
       "email" : "iam@theeraphon.me",
